@@ -1,0 +1,53 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client"
+  output   = "../app/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model User {
+  id        String    @id @default(cuid())
+  name      String
+  email     String    @unique
+  password  String
+  role      String    @default("USER")
+  createdAt DateTime  @default(now())
+  bookings  Booking[]
+}
+
+model Property {
+  id          String    @id @default(cuid())
+  name        String
+  description String
+  location    String
+  maxGuests   Int       @default(6)
+  bedrooms    Int       @default(2)
+  bathrooms   Int       @default(1)
+  imageUrl    String?
+  active      Boolean   @default(true)
+  createdAt   DateTime  @default(now())
+  bookings    Booking[]
+}
+
+model Booking {
+  id         String   @id @default(cuid())
+  propertyId String
+  userId     String
+  startDate  DateTime
+  endDate    DateTime
+  guests     Int      @default(1)
+  message    String?
+  status     String   @default("PENDING")
+  adminNote  String?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  property   Property @relation(fields: [propertyId], references: [id])
+  user       User     @relation(fields: [userId], references: [id])
+}
