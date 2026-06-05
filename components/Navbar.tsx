@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { logout } from "@/app/actions/auth";
-import { Home, CalendarDays, Building2, Users, LogOut, Settings } from "lucide-react";
+import { Home, CalendarDays, Building2, Users, LogOut, Settings, KeyRound } from "lucide-react";
 
 interface NavbarProps {
   userName: string;
@@ -45,6 +45,7 @@ export default function Navbar({ userName, isAdmin }: NavbarProps) {
         </div>
         <div className="flex items-center gap-3">
           <span className="text-sm text-blue-200">{userName}</span>
+          {link("/profil/passwort", "Passwort", KeyRound)}
           <form action={logout}>
             <button
               type="submit"

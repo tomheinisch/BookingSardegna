@@ -5,6 +5,7 @@ import { createUser, deleteUser, updateUserRole } from "@/app/actions/benutzer";
 import { format } from "date-fns";
 import { de } from "date-fns/locale";
 import { Trash2 } from "lucide-react";
+import PasswordResetForm from "@/components/PasswordResetForm";
 
 export default async function AdminUsersPage() {
   const session = await auth();
@@ -25,6 +26,7 @@ export default async function AdminUsersPage() {
                 <th className="text-left px-5 py-3 font-medium text-gray-600">E-Mail</th>
                 <th className="text-left px-5 py-3 font-medium text-gray-600">Rolle</th>
                 <th className="text-left px-5 py-3 font-medium text-gray-600">Registriert</th>
+                <th className="px-5 py-3 text-left font-medium text-gray-600">Passwort</th>
                 <th className="px-5 py-3"></th>
               </tr>
             </thead>
@@ -56,6 +58,9 @@ export default async function AdminUsersPage() {
                   </td>
                   <td className="px-5 py-3 text-gray-500">
                     {format(u.createdAt, "dd.MM.yyyy", { locale: de })}
+                  </td>
+                  <td className="px-5 py-3">
+                    <PasswordResetForm userId={u.id} userName={u.name} />
                   </td>
                   <td className="px-5 py-3">
                     {u.id !== currentUser?.id && (
