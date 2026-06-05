@@ -70,7 +70,7 @@ export default function BookingCalendar({ propertyId, bookedRanges, maxGuests }:
           disabled: "!text-gray-300 !cursor-not-allowed",
         }}
         className="mx-auto"
-        fromMonth={today}
+        startMonth={today}
       />
       {range?.from && range?.to && (
         <div className="mt-2 text-sm text-blue-700 text-center">
