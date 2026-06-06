@@ -74,9 +74,17 @@ export default function PropertyCalendarView({ property }: Props) {
           pending: "rdp-pending",
         }}
         classNames={{
-          root: "!font-sans",
-          month_caption: "text-sm font-semibold text-gray-800",
-          day: "text-sm",
+          root: "!font-sans w-full",
+          month: "w-full",
+          month_grid: "w-full border-collapse",
+          month_caption: "text-base font-semibold text-gray-900 mb-1",
+          weekdays: "text-gray-600",
+          weekday: "text-xs font-medium text-gray-500 w-10 text-center py-1",
+          week: "",
+          day: "w-10 h-10 text-sm font-medium text-gray-900 text-center",
+          day_button: "w-10 h-10 text-sm font-medium text-gray-900 hover:bg-gray-100 rounded",
+          outside: "text-gray-300",
+          today: "font-bold text-blue-600",
         }}
         components={{
           PreviousMonthButton: ({ onClick }) => (
