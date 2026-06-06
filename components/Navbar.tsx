@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { logout } from "@/app/actions/auth";
-import { Home, CalendarDays, Building2, Users, LogOut, Settings, KeyRound } from "lucide-react";
+import { Home, CalendarDays, Building2, Users, LogOut, Settings, KeyRound, CalendarRange } from "lucide-react";
 
 interface NavbarProps {
   userName: string;
@@ -34,6 +34,7 @@ export default function Navbar({ userName, isAdmin }: NavbarProps) {
           <span className="font-bold text-lg mr-4">🏖 Sardinien</span>
           {link("/", "Übersicht", Home)}
           {link("/buchungen", "Meine Buchungen", CalendarDays)}
+          {link("/kalender", "Belegungsplan", CalendarRange)}
           {isAdmin && (
             <>
               {link("/admin", "Dashboard", Settings)}
