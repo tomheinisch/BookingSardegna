@@ -30,7 +30,7 @@ export default async function PropertyPage({ params }: { params: Promise<{ id: s
   return (
     <>
       <Navbar userName={session?.user?.name ?? ""} isAdmin={isAdmin} />
-      <main className="max-w-6xl mx-auto px-4 py-8">
+      <main className="max-w-7xl mx-auto px-4 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2">
             <div className="h-64 rounded-xl overflow-hidden bg-gradient-to-br from-blue-200 to-teal-300 mb-6">

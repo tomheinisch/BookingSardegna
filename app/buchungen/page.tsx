@@ -28,7 +28,7 @@ export default async function MyBookingsPage() {
   return (
     <>
       <Navbar userName={session?.user?.name ?? ""} isAdmin={isAdmin} />
-      <main className="max-w-4xl mx-auto px-4 py-8">
+      <main className="max-w-7xl mx-auto px-4 py-8">
         <h1 className="text-2xl font-bold text-gray-900 mb-6">Meine Buchungsanfragen</h1>
         {bookings.length === 0 ? (
           <div className="text-center py-20 text-gray-400">

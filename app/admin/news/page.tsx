@@ -18,7 +18,7 @@ export default async function AdminNewsPage() {
   return (
     <>
       <Navbar userName={session?.user?.name ?? ""} isAdmin />
-      <main className="max-w-4xl mx-auto px-4 py-8">
+      <main className="max-w-7xl mx-auto px-4 py-8">
         <div className="flex items-center justify-between mb-6">
           <h1 className="text-2xl font-bold text-gray-900">Neuigkeiten verwalten</h1>
           <Link

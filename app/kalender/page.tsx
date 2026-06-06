@@ -32,7 +32,7 @@ export default async function KalenderPage() {
   return (
     <>
       <Navbar userName={session?.user?.name ?? ""} isAdmin={isAdmin} />
-      <main className="max-w-6xl mx-auto px-4 py-8">
+      <main className="max-w-7xl mx-auto px-4 py-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">Belegungskalender</h1>
         <p className="text-gray-500 mb-6">Übersicht aller freien und gebuchten Zeiträume.</p>
 

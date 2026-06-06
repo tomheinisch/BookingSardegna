@@ -15,7 +15,7 @@ export default async function HomePage() {
   return (
     <>
       <Navbar userName={session?.user?.name ?? ""} isAdmin={isAdmin} />
-      <main className="max-w-6xl mx-auto px-4 py-8">
+      <main className="max-w-7xl mx-auto px-4 py-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">
           Unsere Ferienwohnungen
         </h1>

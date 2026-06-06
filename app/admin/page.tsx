@@ -31,7 +31,7 @@ export default async function AdminDashboard() {
   return (
     <>
       <Navbar userName={session?.user?.name ?? ""} isAdmin />
-      <main className="max-w-6xl mx-auto px-4 py-8">
+      <main className="max-w-7xl mx-auto px-4 py-8">
         <h1 className="text-2xl font-bold text-gray-900 mb-6">Admin-Dashboard</h1>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
           {cards.map(({ label, value, href, Icon, color }) => (
