@@ -7,10 +7,10 @@ import { redirect } from "next/navigation";
 
 async function requireAdmin() {
   const session = await auth();
-  if ((session?.user as { role?: string })?.role !== "ADMIN") {
+  if (!session?.user || (session.user as { role?: string })?.role !== "ADMIN") {
     throw new Error("Nicht autorisiert");
   }
-  return session;
+  return session as typeof session & { user: NonNullable<typeof session.user> };
 }
 
 export async function createPost(formData: FormData) {
