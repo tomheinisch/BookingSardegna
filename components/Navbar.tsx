@@ -42,7 +42,6 @@ export default function Navbar({ userName, isAdmin }: NavbarProps) {
               {link("/admin/objekte", "Objekte", Building2)}
               {link("/admin/buchungen", "Anfragen", CalendarDays)}
               {link("/admin/benutzer", "Benutzer", Users)}
-              {link("/admin/news", "News", Newspaper)}
             </>
           )}
         </div>
