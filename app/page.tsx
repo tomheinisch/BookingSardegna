@@ -16,10 +16,10 @@ export default async function HomePage() {
     <>
       <Navbar userName={session?.user?.name ?? ""} isAdmin={isAdmin} />
       <main className="max-w-6xl mx-auto px-4 py-8">
-        <h1 className="text-3xl font-bold text-white mb-2">
+        <h1 className="text-3xl font-bold text-gray-900 mb-2">
           Unsere Ferienwohnungen
         </h1>
-        <p className="text-gray-300 mb-8">Wähle eine Unterkunft und stelle eine Buchungsanfrage.</p>
+        <p className="text-gray-600 mb-8">Wähle eine Unterkunft und stelle eine Buchungsanfrage.</p>
         {properties.length === 0 ? (
           <div className="text-center py-20 text-gray-400">
             <div className="text-5xl mb-4">🏡</div>
