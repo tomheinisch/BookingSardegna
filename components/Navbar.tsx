@@ -18,8 +18,8 @@ export default function Navbar({ userName, isAdmin }: NavbarProps) {
       href={href}
       className={`flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
         pathname === href
-          ? "bg-blue-700 text-white"
-          : "text-blue-100 hover:bg-blue-700/60"
+          ? "text-white font-semibold underline underline-offset-4"
+          : "text-white/80 hover:text-white hover:bg-white/10"
       }`}
     >
       <Icon size={16} />
@@ -28,7 +28,7 @@ export default function Navbar({ userName, isAdmin }: NavbarProps) {
   );
 
   return (
-    <nav className="bg-blue-800 text-white shadow-md">
+    <nav className="text-white shadow-md" style={{ backgroundColor: "#8FA3AD" }}>
       <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
         <div className="flex items-center gap-1">
           <span className="font-bold text-lg mr-4">🏖 Sardinien</span>
